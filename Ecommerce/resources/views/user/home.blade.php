@@ -49,7 +49,7 @@ https://templatemo.com/tm-546-sixteen-clothing
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
+            <ul class="ml-auto navbar-nav">
               <li class="nav-item active">
                 <a class="nav-link" href="index.html">Home
                   <span class="sr-only">(current)</span>
@@ -65,19 +65,19 @@ https://templatemo.com/tm-546-sixteen-clothing
                 <a class="nav-link" href="contact.html">Contact Us</a>
               </li>
               <li class="nav-item">
-              @if (Route::has('login'))
-                  @auth
-                  <x-app-layout>
+                @if (Route::has('login'))
+                    @auth
+                        <x-app-layout>
 
-                  </x-app-layout>
-                  @else
-                      <li><a href="{{ route('login') }}" class=" btn btn-success ml-4" >Log in</a></li>
+                        </x-app-layout>
+                @else
+                        <li><a href="{{ route('login') }}" class="ml-4 btn btn-success" >Log in</a></li>
 
-                      @if (Route::has('register'))
-                          <li><a href="{{ route('register') }}" class=" btn btn-success ml-4" >Register</a></li>
-                      @endif
-                  @endauth
-              @endif
+                         @if (Route::has('register'))
+                            <li><a href="{{ route('register') }}" class="ml-4 btn btn-success" >Register</a></li>
+                        @endif
+                    @endauth
+                @endif
             </li>
             </ul>
           </div>

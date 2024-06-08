@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,5 @@ Route::middleware([
 Route::get('/redirect', [HomeController::class,'redirect']);
 
 Route::get('/', [HomeController::class,'index']);
+
+Route::get('/product', [AdminController::class,'product']);
